@@ -560,9 +560,9 @@ MonoBehaviour:
   cohesionWeight: 1
   separationWeight: 5
   followWeight: 1
-  alignmentMax: 20
-  cohesionMax: 20
-  separationMax: 20
+  alignmentMax: 50
+  cohesionMax: 50
+  separationMax: 50
   prefab: {fileID: 2078418389497613790, guid: 286625236fe573a41b07b23eb130e4e6, type: 3}
   spawnRadius: 3
   boundsMin: {x: -30, y: 1, z: -30}
@@ -570,6 +570,9 @@ MonoBehaviour:
   minDistance: 3
   target: {fileID: 1623971892}
   flockList: []
+  alignmentText: {fileID: 1752706429}
+  cohesionText: {fileID: 1365320845}
+  separationText: {fileID: 25327564}
   alignmentSlider: {fileID: 608545972}
   cohesionSlider: {fileID: 1393236894}
   separationSlider: {fileID: 411559262}
@@ -819,7 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1038,7 +1041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2262,7 +2265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

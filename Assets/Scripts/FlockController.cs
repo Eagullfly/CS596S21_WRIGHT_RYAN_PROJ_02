@@ -15,23 +15,23 @@ public class FlockController : MonoBehaviour
 
     // Weight modifier for alignment value's contributionto the flocking direction.
     [SerializeField]
-    private float alignmentWeight = 1;
+    private float alignmentWeight = 1.0f;
 
     // Weight modifier for cohesion value's contributionto the flocking direction.
     [SerializeField]
-    private float cohesionWeight = 1;
+    private float cohesionWeight = 1.0f;
 
     // Weight modifier for separation value's contributionto the flocking direction.
     [SerializeField]
-    private float separationWeight = 1;
+    private float separationWeight = 1.0f;
 
     // Weight modifier for the target's contributionto the flocking direction.
     [SerializeField]
     private float followWeight = 5;
 
-    public float alignmentMax = 20;
-    public float cohesionMax = 20;
-    public float separationMax = 20;
+    public float alignmentMax = 50;
+    public float cohesionMax = 50;
+    public float separationMax = 50;
 
     [Header("Boid Data")]
     [SerializeField]
@@ -70,6 +70,10 @@ public class FlockController : MonoBehaviour
     private int nextWaypoint;
 
     private Vector3 randomPos;
+
+    public Text alignmentText;
+    public Text cohesionText;
+    public Text separationText;
 
     public Slider alignmentSlider;
     public Slider cohesionSlider;
@@ -119,6 +123,9 @@ public class FlockController : MonoBehaviour
 
     private void Update()
     {
+        alignmentText.text = "Alignment: " + alignmentWeight.ToString("0.00");
+        cohesionText.text = "Cohesion: " + cohesionWeight.ToString("0.00");
+        separationText.text = "Separation: " + separationWeight.ToString("0.00");
         alignmentWeight = alignmentSlider.value;
         cohesionWeight = cohesionSlider.value;
         separationWeight = separationSlider.value;
