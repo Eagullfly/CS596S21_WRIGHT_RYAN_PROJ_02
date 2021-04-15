@@ -123,12 +123,12 @@ public class FlockController : MonoBehaviour
 
     private void Update()
     {
-        alignmentText.text = "Alignment: " + alignmentWeight.ToString("0.00");
-        cohesionText.text = "Cohesion: " + cohesionWeight.ToString("0.00");
-        separationText.text = "Separation: " + separationWeight.ToString("0.00");
         alignmentWeight = alignmentSlider.value;
         cohesionWeight = cohesionSlider.value;
         separationWeight = separationSlider.value;
+        alignmentText.text = "Alignment: " + alignmentWeight.ToString("0.00");
+        cohesionText.text = "Cohesion: " + cohesionWeight.ToString("0.00");
+        separationText.text = "Separation: " + separationWeight.ToString("0.00");
     }
 
     public string GetMode()
