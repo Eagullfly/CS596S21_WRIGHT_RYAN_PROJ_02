@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlockController : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class FlockController : MonoBehaviour
     // Weight modifier for the target's contributionto the flocking direction.
     [SerializeField]
     private float followWeight = 5;
+
+    public float alignmentMax = 20;
+    public float cohesionMax = 20;
+    public float separationMax = 20;
 
     [Header("Boid Data")]
     [SerializeField]
@@ -66,6 +71,10 @@ public class FlockController : MonoBehaviour
 
     private Vector3 randomPos;
 
+    public Slider alignmentSlider;
+    public Slider cohesionSlider;
+    public Slider separationSlider;
+
     public float SpeedModifier { get { return speedModifier; } }
 
     private void Awake()
@@ -96,6 +105,23 @@ public class FlockController : MonoBehaviour
         nextWaypoint = 0;
 
         //currentMode = "lazy";
+    }
+
+    private void Start()
+    {
+        alignmentSlider.maxValue = alignmentMax;
+        cohesionSlider.maxValue = cohesionMax;
+        separationSlider.maxValue = separationMax;
+        alignmentSlider.value = alignmentWeight;
+        cohesionSlider.value = cohesionWeight;
+        separationSlider.value = separationWeight;
+    }
+
+    private void Update()
+    {
+        alignmentWeight = alignmentSlider.value;
+        cohesionWeight = cohesionSlider.value;
+        separationWeight = separationSlider.value;
     }
 
     public string GetMode()
